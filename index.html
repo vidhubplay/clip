@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vidhub</title>
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.page {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: #000;
+}
+
+.video-box {
+  width: 100%;
+}
+
+video {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* HIDE BUTTON */
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-overflow-button {
+  display: none !important;
+}
+
+/* TEXT */
+.hook-text {
+  color: #aaa;
+  font-size: 13px;
+  padding: 10px 15px 0;
+}
+
+/* BUTTON */
+.direct-btn {
+  margin: 10px 15px;
+  padding: 16px;
+  background: linear-gradient(45deg, #ff2e2e, #ff6a00);
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 15px;
+  box-shadow: 0 4px 15px rgba(255,50,50,0.4);
+}
+
+.direct-btn a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+/* TITLE */
+.rec-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 15px 6px;
+}
+
+/* ADS */
+.native-wrap {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-300 {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- VIDEO -->
+<div class="video-box">
+<video 
+id="player"
+controls
+autoplay
+muted
+playsinline
+preload="metadata"
+controlsList="nofullscreen nodownload noremoteplayback"
+disablePictureInPicture
+oncontextmenu="return false;"
+>
+<source id="videoSource" src="" type="video/mp4">
+</video>
+</div>
+
+<!-- HOOK -->
+<div class="hook-text">
+You're watching a preview. Tap below to continue.
+</div>
+
+<!-- BUTTON -->
+<div class="direct-btn">
+  <a href="https://seenimplieddump.com/u0izx7tdt2?key=2da91b9d1f78ac56c6ae64b347258655" target="_blank" rel="noopener noreferrer">
+    ▶ Continue Watching
+  </a>
+</div>
+
+<!-- TITLE -->
+<div class="rec-title">
+🔥 Trending Videos
+</div>
+
+<!-- NATIVE ADS (NEW) -->
+<div class="native-wrap">
+<script async="async" data-cfasync="false" src="></script>
+<div id="container-"></div>
+</div>
+
+<!-- BANNER 300x250 (NEW) -->
+<div class="banner-300">
+<script>
+  atOptions = {
+    'key' : '',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src=""></script>
+</div>
+
+</div>
+
+<!-- VIDEO PARAM -->
+<script>
+(function () {
+
+const params = new URLSearchParams(window.location.search);
+let video = params.get("v");
+
+if (video) {
+  if (!video.startsWith("http")) {
+    video = "https://cdn.videy.co/" + video;
+  }
+} else {
+  video = "https://cdn2.slicedrive.com/melwzP0c1.mp4";
+}
+
+document.getElementById("videoSource").src = video;
+document.getElementById("player").load();
+
+})();
+</script>
+
+</body>
+</html>
